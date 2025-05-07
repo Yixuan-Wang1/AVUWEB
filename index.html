@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -51,7 +49,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav", style = "background-color: rgba(159, 193, 213, 0.779)">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top"> <img style="width:10em;" src="./images/CoCoG_logo.PNG" alt="Logo"></a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top"> <img style="width:15em;" src="./static/images/logo.png" alt="Logo"></a>
           <!-- <p style="width:8em; font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; font-style: italic; color: white; margin-top:-27px; margin-left:3px">Toward Coherent Co-speech 3D
           Gesture Generation in the Wild</p> -->
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -81,7 +79,7 @@
     <!-- Header -->
     <header class="masthead">
       <div class="container">
-            <div class="row align-items-center intro-text" style="margin-top: 90px">
+            <div class="row align-items-center intro-text" style="margin-top: 100px">
               <!-- <div class="intro-lead-in" style="margin-left: 80px">CoCoGesture</div> -->
               <!-- <video controls class="d-block w-100">
                 <source src="./videos/ges_demo.mp4" type="video/mp4">
@@ -118,20 +116,41 @@
         <ul class="text-muted">
           <li class="text-muted">we newly construct two corresponding datasets: fine-grained Music <strong>(f-Music)</strong> and fine-grained Lifescene <strong>(f-Lifescene)</strong>.</li>
           <li class="text-muted">containing annotated sound source masks and frame-by-frame textual descriptions</li>
-          <li class="text-muted">Integrates a wide range of attributes, including facial, mesh, phoneme, text, body, hand, and joint annotations.</li>
+          <li class="text-muted">f-Music focuses on music scenes with complex instrument mixing and background noise,f-Lifescene includes diverse sounding objects in life scenarios.</li>
         </ul>
       </div>
       <!-- characteristics column -->
       <div class="col-md-5">
         <h4 class="service-heading">Basic statistics</h4>
         <ul class="text-muted">
-          <li class="text-muted">Total duration of videos is <b>450 hours</b>.</li>
-          <li class="text-muted">Average duration of videos is <b>13min</b>.</li>
-          <li class="text-muted">More than <b>40M</b> gesture frames.</li>
-          <li class="text-muted"><b>80,720</b> word corpus in total.</li>
+          <li class="text-muted">f-Music dataset includes 3,976 samples across 22 scene types</li>
+          <li class="text-muted">f-Lifescene dataset contains 6,156 samples across 61 types</li>
         </ul>
       </div>
     </div>
+
+  </br>
+	<h5 class="section-subheading" style="text-align:left; margin-top:20px; color: rgb(100, 100, 100)">Statistics of sounding scene category from two datasets</h5>
+	    <div class="row justify-content-md-center text-center">
+      <div class="col-md centered" style="padding:1rem; margin-top:20px; ">
+        <img src="./static/images/categories.png" style="width: 60%" class="img-responsive"/> 
+      </div>
+      </div>
+
+  </br>
+	<h5 class="section-subheading" style="text-align:left; margin-top:20px; color: rgb(100, 100, 100)">Data annotation process and labeling system</h5>
+	    <div class="row justify-content-md-center text-center">
+      <div class="col-md centered" style="padding:1rem; margin-top:20px; ">
+        <img src="./static/images/process_and_system.png" style="width: 90%" class="img-responsive"/> 
+      </div>
+      <p class="text-muted" style="text-align:left; margin-left:15px"> 
+        In this system, the video data is first uploaded into the system. Then the SAM model is used to
+        obtain the initial masks. Based on the initial masks, the TAM is used to gain the frame-level video
+        masks. Finally, the masked region of the frame-level images are fed into the Chat-Univi to get the
+        region-aware descriptions.
+      </p>
+      </div>
+
   </div>
 </section>
 
@@ -163,11 +182,10 @@
         <img src="./static/images/AVUFormer.png" style="width: 100%" class="img-responsive"/> 
       </div>
       <p class="text-muted" style="text-align:left; margin-left:15px"> 
-        Along with GES-X, we proposed <b>CoCoGesture</b>, a novel framework enabling vivid and diverse
-        gesture synthesis from unseen voice of human speech prompts. Our key insight
-        is built upon the custom-designed pretrain-fintune training paradigm.
+      <strong>AVUFormer</strong>: fine-grainied Audio-Visual Understanding Benchmark. In the left of this architecture, the audio and video are fed into the encoders and mapped to the tokens. Then the multi-modal
+        features are fused with the attention mechanism. Next, the previous features are integrated into task decoders for mask and description generation.
       </p>
-    </div>
+      </div>
 	
 	</br>
 	<h5 class="section-subheading" style="text-align:left; margin-top:20px; color: rgb(100, 100, 100)">Multi-Modality Integration (MMI)</h5>
@@ -176,11 +194,8 @@
       <img src="./static/images/sub_module.png" style="width: 60%" class="img-responsive"/> 
     </div>
     <p class="text-muted" style="text-align:left; margin-left:15px"> 
-      Moreover, we designed a novel Mixture-of-Gesture-Experts (MoGE) block to adaptively fuse the audio 
-      embedding from the human speech and the gesture features from the pre-trained 
-      gesture experts with a routing mechanism. <br>
-      Such an effective manner ensures 
-      audio embedding is temporal coordinated with motion features while preserving the vivid and diverse gesture generation. 
+      <strong>Multi-Modality integration</strong> with attention mechanisms. Self-attention uses the same input for Q, K, V. Cross-attention uses the cross-modality input for Q and K, V.
+    </p> 
   </div>
 
 </br>
@@ -190,9 +205,11 @@
       <img src="./static/images/Mask_Collaborat_on_Module.png" style="width: 100%" class="img-responsive"/> 
     </div>
     <p class="text-muted" style="text-align:left; margin-left:15px"> 
-      Along with GES-X, we proposed <b>CoCoGesture</b>, a novel framework enabling vivid and diverse
-      gesture synthesis from unseen voice of human speech prompts. Our key insight
-      is built upon the custom-designed pretrain-fintune training paradigm.
+      <strong>Mask Collaboration Module</strong> for task interaction. (a). The plain multi-task output without
+      interaction. (b). Mask collaboration module introduces the interaction between these two tasks. As
+      a fine-grained AVU task, region-aware visual information will give more details for text description.
+      Thus, combining the multi-modal representations with more regional visual features will give more
+      accurate fine-grained captions.
     </p>
   </div>
 	  </div>
@@ -212,9 +229,6 @@
 <div class="col-md-12" style="text-align:left">
   <div class="container">
     <h5 class="section-subheading" style="text-align:left; margin-top:20px; color: rgb(100, 100, 100)">Demo Video</h5>
-    <p style="text-align: left; margin-bottom: 20px; color: rgb(171, 171, 171)">
-      If it takes too long to load the videos below, please view the videos <a href="https://www.udrop.com/Njho/ges_demo.mp4">here.</a>
-    </p>
     <div class="row">
       <video controls class="d-block w-100">
         <source src="./static/videos/demo.mp4" type="video/mp4">
@@ -224,9 +238,6 @@
     
     <!-- Carousel -->
     <h5 class="section-subheading" style="text-align:left; margin-top:50px; color: rgb(100, 100, 100)">Visual Results on f-music Dataset</h5>
-    <p style="text-align: left; margin-bottom: 20px; color: rgb(171, 171, 171)">
-      If it takes too long to load the videos below, please view the videos <a href="https://www.udrop.com/folder/9b9ee36f9b698dc38cb975f449a664e7/cocogesture">here.</a>
-    </p>
     <div id="carouselExampleIndicators1" class="carousel slide">
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active"></li>
@@ -298,9 +309,6 @@
     </div>
 
     <h5 class="section-subheading" style="text-align:left; margin-top:50px; color: rgb(100, 100, 100)">Visual Results on f-life Dataset</h5>
-    <p style="text-align: left; margin-bottom: 20px; color: rgb(171, 171, 171)">
-      If it takes too long to load the videos below, please view the videos <a href="https://www.udrop.com/folder/9b9ee36f9b698dc38cb975f449a664e7/cocogesture">here.</a>
-    </p>
     <div id="carouselExampleIndicators1" class="carousel slide">
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active"></li>
@@ -382,7 +390,11 @@
     <div class="row">
       <div class="col-md-12 text-center">
         <h2 class="section-heading" style="color: rgb(90, 90, 90); margin-top: 60px">Experiments</h2>
-        <h6 class="section-subheading" style="color: rgb(171, 171, 171)">Extensive experiments and comprehensive results demonstrate that our proposed CoCoGesture outperforms the state-of-the-art methods on the zero-shot speech-to-gesture generation.</h6>
+        <h6 class="section-subheading" style="color: rgb(171, 171, 171)"> Extensive experiments are conducted on our two
+          datasets to verify the feasibility of the task, evaluate the availability of the
+          datasets, and demonstrate the superiority of the AVUFormer, which achieves
+          SOTA performance on the Audio-Visual Understanding benchmark.
+        </h6>
       </div>
     </div>
 	
@@ -423,11 +435,6 @@
     
       <img src="./static/images/e3.png" style="width: 85%; margin-left:30px;" class="img-responsive"/> 
     </div>
-    <p class="text-muted" style="text-align:left; margin-left:50px; margin-top: 5px;"> 
-      ↑ means the higher the better.  
-      ↓ indicates the lower the better. <br> 
-      “-” denotes that the method cannot be applied to the dataset due to the lack of text transcripts. <br> 
-    </p>
 
     <h5 class="section-subheading" style="text-align:left; color: rgb(100, 100, 100); margin-top: 50px">Quantitative comparisons on ablation analysis.</h5>
     <div class="row text-center">
