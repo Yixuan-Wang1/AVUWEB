@@ -309,13 +309,13 @@
     </div>
 
     <h5 class="section-subheading" style="text-align:left; margin-top:50px; color: rgb(100, 100, 100)">Visual Results on f-life Dataset</h5>
-    <div id="carouselExampleIndicators1" class="carousel slide">
+    <div id="carouselExampleIndicators2" class="carousel slide">
       <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators1" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators1" data-slide-to="2"></li>
-        <li data-target="#carouselExampleIndicators1" data-slide-to="3"></li>
-        <li data-target="#carouselExampleIndicators1" data-slide-to="4"></li>
+        <li data-target="#carouselExampleIndicators2" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators2" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators2" data-slide-to="2"></li>
+        <li data-target="#carouselExampleIndicators2" data-slide-to="3"></li>
+        <li data-target="#carouselExampleIndicators2" data-slide-to="4"></li>
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -369,11 +369,51 @@
           </div>
         </div>
             </div>
-      <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
+      <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
       </a>
-      <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next">
+      <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+	<h5 class="section-subheading" style="text-align:left; margin-top:50px; color: rgb(100, 100, 100)">More Visual Results with Discriptions.</h5>
+    <div id="carouselExampleIndicators3" class="carousel slide">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators3" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators3" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators3" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="d-flex justify-content-center">
+            <div class="col-md-8">
+              <img src="./static/images/more_music_results.png" style="width: 85%; margin-left:30px;" class="img-responsive"/> 
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="d-flex justify-content-center">
+            <div class="col-md-8">
+              <img src="./static/images/more_life_results.png" style="width: 85%; margin-left:30px;" class="img-responsive"/> 
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="d-flex justify-content-center">
+            <div class="col-md-8">
+              <img src="./static/images/more_ablation_results.png" style="width: 85%; margin-left:30px;" class="img-responsive"/> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators3" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators3" role="button" data-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
@@ -406,11 +446,11 @@
     
       <img src="./static/images/comparisons_on_music.png" style="width: 85%; margin-left:30px;" class="img-responsive"/> 
     </div>
-    <p class="text-muted" style="text-align:left; margin-left:50px; margin-top: 5px;"> 
+    <!-- <p class="text-muted" style="text-align:left; margin-left:50px; margin-top: 5px;"> 
       ↑ means the higher the better.  
       ↓ indicates the lower the better. <br> 
       “-” denotes that the method cannot be applied to the dataset due to the lack of text transcripts. <br> 
-    </p>
+    </p> -->
 
     <h5 class="section-subheading" style="text-align:left; color: rgb(100, 100, 100); margin-top: 50px">Quantitative comparisons with single-task models on dataset f-Lifescene.</h5>
     <div class="row text-center">
@@ -420,11 +460,11 @@
     
       <img src="./static/images/comparisons_on_life.png" style="width: 85%; margin-left:30px;" class="img-responsive"/> 
     </div>
-    <p class="text-muted" style="text-align:left; margin-left:50px; margin-top: 5px;"> 
+    <!-- <p class="text-muted" style="text-align:left; margin-left:50px; margin-top: 5px;"> 
       ↑ means the higher the better.  
       ↓ indicates the lower the better. <br> 
       “-” denotes that the method cannot be applied to the dataset due to the lack of text transcripts. <br> 
-    </p>
+    </p> -->
 
     <h5 class="section-subheading" style="text-align:left; color: rgb(100, 100, 100); margin-top: 50px">Comparison with Multi-Model Large Models on sound object description task (average of two datasets).
       </h5>
@@ -448,7 +488,7 @@
 	<h5 class="section-subheading" style="text-align:left; color: rgb(100, 100, 100); margin-top: 50px">Computational efficiency of the proposed method with comparisons.</h5>
     <div class="row text-center">
       <p class="text-muted" style="text-align:left; margin-left:15px"> 
-        Params:model parameters,FPS:frame rate inferred per second,FLOPS:Floating Point Operations per second,Inference Time:inference time for a single sample.        
+        Params:Model Parameters,FPS:Frame Rate Inferred Per Second,FLOPS:Floating Point Operations Per Second,Inference Time:Inference Time For a Single Sample.        
       </p>
     
       <img src="./static/images/computational_efficiency.png" style="width: 85%; margin-left:30px;" class="img-responsive"/> 
@@ -556,6 +596,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>
+
 
 
 
